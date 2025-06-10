@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.min.js"></script>
+
+</head>
+
+<body class="m-0 p-0 box-border overflow-x-hidden">
+  <!-- Navabar Section -->
+
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-cover bg-center md:py-24 py-4"
+    style="background-image: url('/assets/nav-bg.svg')">
+    <div
+      class="max-w-7xl mx-auto relative flex items-center justify-between px-4 sm:px-6 transition-all duration-300 ease-in-out">
+      <!-- Logo & Call Info -->
+      <div class="flex items-center gap-4 z-10">
+        <a href="/">
+          <img id="logo" src="/assets/logo.svg" alt="Amala Foods Logo"
+            class="h-10 sm:h-16 md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 pb-2 md:p-0 transition-all duration-300 ease-in-out" />
+        </a>
+        <div class="hidden md:block text-sm lg:text-base text-[#301712]">
+          Call Now: <span class="font-semibold">+91 98959 99955</span>
+        </div>
+      </div>
+
+      <!-- Nav Links & Hamburger -->
+      <div class="flex items-center z-10">
+        <div class="hidden md:flex gap-2 lg:gap-6 text-md font-semibold text-[#301712]">
+          <a href="/" class="hover:text-[#5a2d0c] transition-colors">Home</a>
+          <a href="/aboutUs.html" class="hover:text-[#5a2d0c] transition-colors">About Us</a>
+          <a href="/product.html" class="hover:text-[#5a2d0c] transition-colors">Products</a>
+          <a href="/whyus.html" class="hover:text-[#5a2d0c] transition-colors">Why us</a>
+          <a href="/contact.html" class="hover:text-[#5a2d0c] transition-colors">Contact Us</a>
+        </div>
+        <button id="menuToggle" class="md:hidden text-[#301712] focus:outline-none pb-6" aria-label="Toggle menu">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-menu">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="overflow-hidden fixed top-0 right-0 h-screen w-[75%] sm:w-[50%] bg-gray-100 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
+      <div class="relative flex flex-col h-full text-[#301712] text-lg font-semibold">
+        <!-- Top bar -->
+        <div class="flex items-center justify-between p-4 pt-10">
+          <img src="/assets/logo.svg" alt="Amala Foods Logo" class="h-8" />
+          <button id="closeMenu" class="text-[#301712] focus:outline-none" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="hover:text-[#5a2d0c] transition-colors pb-1">
+              <line x1="18" x2="6" y1="6" y2="18" />
+              <line x1="6" x2="18" y1="6" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-col items-start gap-6 px-6 pt-20">
+          <a href="/" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Home</a>
+          <a href="/aboutUs.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">About Us</a>
+          <a href="/product.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Products</a>
+          <a href="/contact.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Contact Us</a>
+          <a href="/blog.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Blog</a>
+          <div class="text-sm text-[#301712] mt-4">
+            Call Now: <span class="font-semibold">+91 98959 99955</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="backdrop"
+      class="fixed inset-0 min-h-screen bg-transparent bg-opacity-50 backdrop-blur-sm md:hidden z-40 hidden"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="w-full   relative overflow-visible z-10">
+   
+
+    <!-- Overlay Content -->
+    <div class="relative z-50 h-full">
+    
+
+      <!-- Hero Content -->
+      <div class="w-full min-h-[60vh] relative overflow-visible">
+        <!-- About Hero Section -->
+<div class="w-full min-h-[60vh] relative overflow-visible">
+  <!-- Background Image (60vh height) -->
+  <div
+    class="w-full h-[60vh] bg-cover bg-center relative"
+    style="background-image: url('/assets/AboutBG2.jpg')"
+  >
+    <!-- ABOUT Text Centered Vertically -->
+    <div class="absolute inset-0 flex items-end justify-center">
+      <h1
+        class="text-4xl sm:text-5xl lg:text-7xl font-bold font-Signika text-white bg-clip-text pb-20"
+        data-aos="fade"
+      >
+        Blogs
+      </h1>
+    </div>
+
+    <!-- White Box with "Home - About" -->
+    <div class="absolute bottom-[-35px] left-1/2 transform -translate-x-1/2 bg-white px-10 sm:px-16 md:px-20 lg:px-24 py-5 sm:py-3 md:py-4 shadow-md font-Raleway text-[#301712] font-medium text-md sm:text-base md:text-md z-5">
+      Home - Blogs
+    </div>
+  </div>
+</div>
+        
+      </div>
+
+      <!-- Arrows -->
+      <div class="absolute bottom-20 right-4 sm:right-80 flex gap-2 sm:gap-4 z-10 hidden">
+        <button id="prev-btn"
+          class="group flex items-center justify-center w-12 h-10 bg-white text-red-600 rounded-md hover:bg-red-600 hover:text-white transition">
+          <!-- Default (red) icon -->
+          <img src="/assets/red-left.svg" class="w-8 h-6 block group-hover:hidden" alt="Previous" />
+          <!-- Hover (white) icon -->
+          <img src="/assets/white-left.svg" class="w-8 h-6 hidden group-hover:block" alt="Previous Hover" />
+        </button>
+
+        <button id="next-btn"
+          class="group flex items-center justify-center w-12 h-10 bg-white text-red-600 rounded-md hover:bg-red-600 hover:text-white transition">
+          <!-- Default (red) icon -->
+          <img src="/assets/red-right.svg" class="w-8 h-6 block group-hover:hidden" alt="Next" />
+          <!-- Hover (white) icon -->
+          <img src="/assets/white-right.svg" class="w-8 h-6 hidden group-hover:block" alt="Next Hover" />
+        </button>
+      </div>
+
+     
+    </div>
+  </div>
+
+
+  <div>
+    <div class="bg-white py-20">
+      <div class="md:max-w-7xl mx-auto px-4">
+        <div class="mb-6">
+          <img
+            src="assets/blogimg.jpg"
+            alt="Tropical Beach"
+            class="w-full h-full object-cover rounded-lg"
+          >
+        </div>
+
+        <div class="text-gray-600 text-base leading-relaxed">
+          <h1 class="font-bold font-Signika text-6xl text-black mb-8">
+            Lorem Ipsum
+          </h1>
+          <p class="mb-4 font-Raleway">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <div class="mt-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4 font-Signika">
+            Rice Terraces, Tegallalang
+          </h2>
+          <p class="text-gray-600 text-base leading-relaxed font-Raleway">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div>
+    <div class="bg-white py-10">
+      <div class="flex items-center md:max-w-7xl mx-auto mb-6 px-4 gap-4">
+        <div class="flex space-x-4">
+          <!-- Instagram Icon -->
+          <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.1826 0.00927734C24.7903 0.00927734 28.5828 3.89469 28.583 8.76123V20.9907C28.5828 25.8573 24.7904 29.7427 20.1826 29.7427H8.39941C3.79185 29.7424 0.000180312 25.8571 0 20.9907V8.76123C0.000230336 3.89486 3.79188 0.00955075 8.39941 0.00927734H20.1826ZM8.39941 2.22803C4.87332 2.2283 2.07152 5.1862 2.07129 8.76123V20.9907C2.07147 24.5658 4.87329 27.5237 8.39941 27.5239H20.1826C23.7089 27.5239 26.5115 24.5659 26.5117 20.9907V8.76123C26.5115 5.18604 23.7089 2.22803 20.1826 2.22803H8.39941ZM14.291 8.88525C17.6083 8.88525 20.2979 11.7659 20.2979 15.3198C20.2978 18.8736 17.6083 21.7544 14.291 21.7544C10.9739 21.7542 8.28516 18.8735 8.28516 15.3198C8.28516 11.7661 10.9739 8.88544 14.291 8.88525ZM14.291 11.104C12.1178 11.1042 10.3564 12.9915 10.3564 15.3198C10.3565 17.6481 12.1178 19.5355 14.291 19.5356C16.4644 19.5356 18.2266 17.6482 18.2266 15.3198C18.2266 12.9914 16.4644 11.104 14.291 11.104ZM20.5049 6.44385C21.1912 6.44385 21.748 7.04059 21.748 7.77588C21.7478 8.51098 21.1911 9.10693 20.5049 9.10693C19.8187 9.10689 19.2629 8.51096 19.2627 7.77588C19.2627 7.04062 19.8186 6.44389 20.5049 6.44385ZM20.5049 6.88818C20.0474 6.88823 19.6768 7.28572 19.6768 7.77588C19.677 8.26586 20.0475 8.66255 20.5049 8.6626C20.9623 8.6626 21.3328 8.26589 21.333 7.77588C21.333 7.28569 20.9624 6.88818 20.5049 6.88818Z" fill="#012923"/>
+            <path d="M20.1826 0.00927734C24.7903 0.00927734 28.5828 3.89469 28.583 8.76123V20.9907C28.5828 25.8573 24.7904 29.7427 20.1826 29.7427H8.39941C3.79185 29.7424 0.000180312 25.8571 0 20.9907V8.76123C0.000230336 3.89486 3.79188 0.00955075 8.39941 0.00927734H20.1826ZM8.39941 2.22803C4.87332 2.2283 2.07152 5.1862 2.07129 8.76123V20.9907C2.07147 24.5658 4.87329 27.5237 8.39941 27.5239H20.1826C23.7089 27.5239 26.5115 24.5659 26.5117 20.9907V8.76123C26.5115 5.18604 23.7089 2.22803 20.1826 2.22803H8.39941ZM14.291 8.88525C17.6083 8.88525 20.2979 11.7659 20.2979 15.3198C20.2978 18.8736 17.6083 21.7544 14.291 21.7544C10.9739 21.7542 8.28516 18.8735 8.28516 15.3198C8.28516 11.7661 10.9739 8.88544 14.291 8.88525ZM14.291 11.104C12.1178 11.1042 10.3564 12.9915 10.3564 15.3198C10.3565 17.6481 12.1178 19.5355 14.291 19.5356C16.4644 19.5356 18.2266 17.6482 18.2266 15.3198C18.2266 12.9914 16.4644 11.104 14.291 11.104ZM20.5049 6.44385C21.1912 6.44385 21.748 7.04059 21.748 7.77588C21.7478 8.51098 21.1911 9.10693 20.5049 9.10693C19.8187 9.10689 19.2629 8.51096 19.2627 7.77588C19.2627 7.04062 19.8186 6.44389 20.5049 6.44385ZM20.5049 6.88818C20.0474 6.88823 19.6768 7.28572 19.6768 7.77588C19.677 8.26586 20.0475 8.66255 20.5049 8.6626C20.9623 8.6626 21.3328 8.26589 21.333 7.77588C21.333 7.28569 20.9624 6.88818 20.5049 6.88818Z" stroke="#012923"/>
+          </svg>
+
+          <!-- Facebook Icon -->
+          <svg width="16" height="30" viewBox="0 0 16 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.5672 1.36279H10.9944C9.41504 1.36279 7.9004 2.0782 6.78377 3.35164C5.667 4.62508 5.03963 6.35223 5.03963 8.15313V12.2273H1.4668V17.6596H5.03963V28.5242H9.80341V17.6596H13.3762L14.5672 12.2273H9.80341V8.15313C9.80341 7.79295 9.92894 7.44752 10.1522 7.19283C10.3755 6.93815 10.6785 6.79507 10.9944 6.79507H14.5672V1.36279Z" fill="#012923" stroke="#012923" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <!-- YouTube Icon -->
+          <svg width="32" height="24" viewBox="0 0 31 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.45117 12.9717V10.7816C1.45117 6.30059 1.45117 4.0601 2.79916 2.6185C4.14716 1.1769 6.26938 1.1145 10.5138 0.989694C12.5251 0.930558 14.5796 0.888184 16.338 0.888184C18.0964 0.888184 20.1509 0.930558 22.1621 0.989694C26.4065 1.1145 28.5288 1.1769 29.8768 2.6185C31.2248 4.0601 31.2248 6.30059 31.2248 10.7816V12.9717C31.2248 17.4526 31.2248 19.6932 29.8768 21.1347C28.5288 22.5763 26.4067 22.6387 22.1623 22.7636C20.1509 22.8227 18.0964 22.8651 16.338 22.8651C14.5796 22.8651 12.525 22.8227 10.5137 22.7636C6.2693 22.6387 4.14713 22.5763 2.79914 21.1347C1.45117 19.6932 1.45117 17.4526 1.45117 12.9717Z" fill="#CBA660" stroke="#CBA660" stroke-width="1.5"/>
+            <path d="M21.6484 11.3267C21.9818 11.5191 21.9818 12.0002 21.6484 12.1927L13.7216 16.7693C13.3882 16.9617 12.9716 16.7212 12.9716 16.3363L12.9716 7.1831C12.9716 6.7982 13.3882 6.55764 13.7216 6.75009L21.6484 11.3267Z" fill="white"/>
+          </svg>
+
+          <!-- LinkedIn Icon -->
+          <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_45_3406)">
+              <path d="M32.4816 31.8648H25.6555L25.6577 20.4835C25.576 17.8891 24.6499 15.6966 21.7026 15.9641C20.203 16.0995 18.4305 17.7817 18.4305 19.334V31.7786L18.3454 31.8648H11.5469V10.95H18.4305V13.8309C19.551 12.1162 21.1004 10.9108 23.1403 10.5639C28.6669 9.62261 32.3424 13.5298 32.485 18.9278L32.4827 31.8648H32.4816Z" fill="#012923"/>
+              <path d="M7.79927 10.9497H0.910156V31.8645H7.79927V10.9497Z" fill="#012923"/>
+              <path d="M3.91275 0.884628C6.58042 0.645116 8.72098 2.59479 8.1165 5.37268C7.35509 8.87358 1.69594 9.05042 0.664895 5.63681C-0.0633575 3.22267 1.49039 1.10176 3.91275 0.884628Z" fill="#012923"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_45_3406">
+                <rect width="32" height="31" fill="white" transform="translate(0.484375 0.864746)"/>
+              </clipPath>
+            </defs>
+          </svg>
+
+          <!-- Twitter Icon -->
+          <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_45_3410)">
+              <path d="M14.2616 0.742676C6.52352 0.742676 0.25 7.22965 0.25 15.231C0.25 21.3721 3.94049 26.6188 9.15283 28.7297C9.0261 27.5851 8.92198 25.82 9.1991 24.5678C9.45257 23.4351 10.8366 17.3652 10.8366 17.3652C10.8366 17.3652 10.4217 16.4947 10.4217 15.219C10.4217 13.2039 11.5518 11.7015 12.959 11.7015C14.1585 11.7015 14.7348 12.6318 14.7348 13.7406C14.7348 14.9809 13.9739 16.841 13.5701 18.5702C13.2356 20.0133 14.2737 21.1938 15.6456 21.1938C18.1366 21.1938 20.0508 18.475 20.0508 14.5638C20.0508 11.0936 17.6408 8.67332 14.1927 8.67332C10.2024 8.67332 7.86184 11.7618 7.86184 14.9575C7.86184 16.1978 8.32302 17.5332 8.89989 18.2608C9.01505 18.4038 9.02662 18.5348 8.99191 18.6784C8.88832 19.1313 8.6459 20.1215 8.59962 20.3238C8.54178 20.5859 8.39191 20.6457 8.12687 20.5146C6.37418 19.668 5.27828 17.0324 5.27828 14.8982C5.27828 10.3312 8.48393 6.13399 14.5387 6.13399C19.3934 6.13399 23.176 9.71134 23.176 14.5051C23.176 19.2988 20.1318 23.52 15.9107 23.52C14.4924 23.52 13.1546 22.7565 12.705 21.8506C12.705 21.8506 12.0014 24.6173 11.8284 25.2969C11.5171 26.5612 10.6636 28.1348 10.0873 29.101C11.4019 29.5186 12.786 29.7448 14.239 29.7448C21.977 29.7448 28.2505 23.2579 28.2505 15.2565C28.2726 7.22965 21.9996 0.742676 14.2616 0.742676Z" fill="#012923"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_45_3410">
+                <rect width="28" height="29" fill="white" transform="translate(0.25 0.742676)"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <a href="#" class="text-gray-600 font-bold hover:text-gray-800 font-bona-nova">
+          Share Now
+        </a>
+      </div>
+      <div class="md:max-w-7xl mx-auto px-4">
+        <p class="text-black mb-4 font-montserrat">
+          No Comments Yet For This Post
+        </p>
+
+        <div class=" p-10 rounded-lg shadow-md font-Raleway">
+          <h2 class="text-lg font-semibold text-gray-800 mb-2">
+            Post Your Comment Here
+          </h2>
+          <p class="text-gray-500 text-sm mb-4">
+            Your email address will not be published. Required fields are marked *
+          </p>
+
+          <form>
+            <div class="mb-4">
+              <label for="comment" class="block text-gray-700 mb-2">
+                Your Comment
+              </label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="5"
+                class="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                required
+              ></textarea>
+            </div>
+
+            <div class="flex space-x-4 mb-4">
+              <div class="flex-1">
+                <label for="name1" class="block text-gray-700 mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name1"
+                  name="name1"
+                  class="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="flex-1">
+                <label for="name2" class="block text-gray-700 mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name2"
+                  name="name2"
+                  class="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="flex items-center mb-4">
+              <input
+                type="checkbox"
+                id="save-info"
+                name="save-info"
+                class="mr-2 h-4 w-4 text-gray-600 focus:ring-gray-400"
+              />
+              <label for="save-info" class="text-gray-600 text-sm">
+                Save my name, email, and website in this browser for the next time I comment.
+              </label>
+            </div>
+
+            <div class="flex justify-end">
+              <button class="flex items-center justify-center gap-2 bg-gradient-to-r from-[#C53527] to-[#F04231] text-white font-semibold text-md sm:text-md px-5 sm:px-7 py-2 sm:py-3 rounded-full hover:from-[#c53427] hover:to-[#e65c2b] transition-colors font-Raleway mt-6 sm:mt-11">
+                Read More
+                <span>
+                  <!-- Replaced HiArrowNarrowRight with a simple SVG arrow -->
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+<div class="relative bg-[#301712] text-white overflow-hidden h-auto  ">
+   <!-- Top Background Image -->
+    <img class="w-full absolute top-0 left-0 z-0" src="/assets/bottom.svg" alt="background" />
+  <!-- Newsletter Section -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:pt-60  pt-20 py-15 text-center ">
+    <h1 class="md:text-6xl text-3xl font-bold mb-4 font-Signika">
+      Our Newsletter
+    </h1>
+    <p class="text-md md:text-md mb-6 font-Raleway max-w-4xl mx-auto">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+      nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+      volutpat. Ut wisi enim ad minim veniam,
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <!-- Underline wrapper -->
+      <div class="flex items-center border-b border-white w-full sm:w-5xl mt-10">
+        <input
+          type="text"
+          placeholder="Your email address"
+          class="font-Raleway bg-transparent font-light py-2 px-4 text-md outline-none w-full text-white placeholder-white mb-3"
+        />
+        <button class="text-[#F04231] text-md font-Raleway font-light border-none relative -mt-3 px-2">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Leaf Image Layer -->
+  <div
+    class="absolute inset-0 z-0 bg-no-repeat bg-center bg-contain opacity-80 pointer-events-none"
+    style="background-image: url('/assets/ff.svg')"
+  ></div>
+
+  <!-- Footer Main Content -->
+  <div class="relative z-10">
+    <div class="max-w-7xl mx-auto px-4  md:py-40 grid md:grid-cols-3 gap-10 md:gap-30 text-left py-8">
+      <!-- Center Logo & Info -->
+      <div class="order-1 md:order-2 text-center">
+        <a href="/">
+          <img src="/assets/logo2.svg " alt="Logo" class="mx-auto mb-6 w-[200px]" />
+        </a>
+        <p class="text-md font-Raleway max-w-sm mx-auto">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+          erat volutpat. Ut wisi enim ad minim veniam,
+        </p>
+        <div class="flex justify-center space-x-4 mt-8">
+          <!-- Instagram -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <!-- Facebook -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </div>
+          <!-- YouTube -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </div>
+          <!-- Twitter/X -->
+<div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group rounded">
+  <!-- Official X (Twitter) SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.5 3h4.36l3.76 5.54L17.92 3H21l-6.77 7.54L21.88 21h-4.4l-4.15-6.17L8.06 21H5l7.15-8.03L4.5 3z" />
+  </svg>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="order-2 md:order-1">
+        <h2 class="md:text-lg text-2xl font-semibold mb-4 font-Signika">
+          Quick Links
+        </h2>
+        <ul class="space-y-3 text-md font-Raleway">
+          <li class="mb-3"><a href="/">Home</a></li>
+          <li class="mb-3"><a href="/aboutUs.html">About</a></li>
+          <li class="mb-3"><a href="/product.html">Product</a></li>
+          <li class="mb-3"><a href="/testimonial.html">Testimonial</a></li>
+          <li class="mb-3"><a href="/blog.html">Blog</a></li>
+          <li class="mb-3"><a href="/thanku.html">Thank You</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="order-3 mb-5 md:pl-20">
+        <h2 class="md:text-lg text-2xl font-semibold mb-4 font-Signika">
+          Contact
+        </h2>
+        <ul class="text-md space-y-4 font-Raleway">
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 pt-1">
+              <img src="/assets/sd.svg" alt="globe" />
+            </div>
+            <span>
+              No: 58 A, East Madison Street,
+              <br /> Baltimore, MD, USA 4508
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="/assets/dddd.svg" alt="Phone" class="w-5 pt-1" />
+            <span>
+              +91 98955 03930
+              <br />
+              +91 98955 03930
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="/assets/ddd.svg" alt="Email" class="w-5 pt-1" />
+            <span>info@amalfoods.in</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Footer -->
+<div class="bg-[#FFFCED] text-sm text-gray-800 py-6 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center font-Raleway gap-2">
+    <p class="text-[16px]">© Copyright 2024, all rights reserved.</p>
+    <p class="text-[16px]">
+      Powered by <span class="font-semibold ml-1">spydernet</span>
+    </p>
+  </div>
+</div>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>

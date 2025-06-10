@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Sacramento&family=Signika:wght@400;600&display=swap');
+
+/* Optional: Only if using Tailwind via CLI. Can remove for CDN usage. */
+/* @import "tailwindcss"; */
+
+.font-Raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.font-Sacramento {
+  font-family: 'Sacramento', serif;
+}
+
+.font-Signika {
+  font-family: 'Signika', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 15s linear infinite;
+}
+
+.client-carousel:hover .animate-slide {
+  animation-play-state: paused;
+}

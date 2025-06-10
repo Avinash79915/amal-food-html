@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.min.js"></script>
+
+</head>
+
+<body class="m-0 p-0 box-border overflow-x-hidden">
+  <!-- Navabar Section -->
+
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-cover bg-center md:py-24 py-4"
+    style="background-image: url('/assets/nav-bg.svg')">
+    <div
+      class="max-w-7xl mx-auto relative flex items-center justify-between px-4 sm:px-6 transition-all duration-300 ease-in-out">
+      <!-- Logo & Call Info -->
+      <div class="flex items-center gap-4 z-10">
+        <a href="/">
+          <img id="logo" src="/assets/logo.svg" alt="Amala Foods Logo"
+            class="h-10 sm:h-16 md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 pb-2 md:p-0 transition-all duration-300 ease-in-out" />
+        </a>
+        <div class="hidden md:block text-sm lg:text-base text-[#301712]">
+          Call Now: <span class="font-semibold">+91 98959 99955</span>
+        </div>
+      </div>
+
+      <!-- Nav Links & Hamburger -->
+      <div class="flex items-center z-10">
+        <div class="hidden md:flex gap-2 lg:gap-6 text-md font-semibold text-[#301712]">
+          <a href="/" class="hover:text-[#5a2d0c] transition-colors">Home</a>
+          <a href="/aboutUs.html" class="hover:text-[#5a2d0c] transition-colors">About Us</a>
+          <a href="/product.html" class="hover:text-[#5a2d0c] transition-colors">Products</a>
+          <a href="/whyus.html" class="hover:text-[#5a2d0c] transition-colors">Why us</a>
+          <a href="/contact.html" class="hover:text-[#5a2d0c] transition-colors">Contact Us</a>
+        </div>
+        <button id="menuToggle" class="md:hidden text-[#301712] focus:outline-none pb-6" aria-label="Toggle menu">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-menu">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="overflow-hidden fixed top-0 right-0 h-screen w-[75%] sm:w-[50%] bg-gray-100 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
+      <div class="relative flex flex-col h-full text-[#301712] text-lg font-semibold">
+        <!-- Top bar -->
+        <div class="flex items-center justify-between p-4 pt-10">
+          <img src="/assets/logo.svg" alt="Amala Foods Logo" class="h-8" />
+          <button id="closeMenu" class="text-[#301712] focus:outline-none" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="hover:text-[#5a2d0c] transition-colors pb-1">
+              <line x1="18" x2="6" y1="6" y2="18" />
+              <line x1="6" x2="18" y1="6" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-col items-start gap-6 px-6 pt-20">
+          <a href="/" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Home</a>
+          <a href="/aboutUs.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">About Us</a>
+          <a href="/product.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Products</a>
+          <a href="/contact.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Contact Us</a>
+          <a href="/blog.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Blog</a>
+          <div class="text-sm text-[#301712] mt-4">
+            Call Now: <span class="font-semibold">+91 98959 99955</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="backdrop"
+      class="fixed inset-0 min-h-screen bg-transparent bg-opacity-50 backdrop-blur-sm md:hidden z-40 hidden"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="w-full   relative overflow-visible z-10">
+   
+
+    <!-- Overlay Content -->
+    <div class="relative z-50 h-full">
+    
+
+      <!-- Hero Content -->
+      <div class="w-full min-h-[60vh] relative overflow-visible">
+        <!-- About Hero Section -->
+<div class="w-full min-h-[60vh] relative overflow-visible">
+  <!-- Background Image (60vh height) -->
+  <div
+    class="w-full h-[60vh] bg-cover bg-center relative"
+    style="background-image: url('/assets/AboutBG2.jpg')"
+  >
+    <!-- ABOUT Text Centered Vertically -->
+    <div class="absolute inset-0 flex items-end justify-center">
+      <h1
+        class="text-4xl sm:text-5xl lg:text-7xl font-bold font-Signika text-white bg-clip-text pb-20"
+        data-aos="fade"
+      >
+        Products
+      </h1>
+    </div>
+
+    <!-- White Box with "Home - About" -->
+    <div class="absolute bottom-[-35px] left-1/2 transform -translate-x-1/2 bg-white px-10 sm:px-16 md:px-20 lg:px-24 py-5 sm:py-3 md:py-4 shadow-md font-Raleway text-[#301712] font-medium text-md sm:text-base md:text-md z-5">
+      Home - Products
+    </div>
+  </div>
+</div>
+        
+      </div>
+
+      <!-- Arrows -->
+      <div class="absolute bottom-20 right-4 sm:right-80 flex gap-2 sm:gap-4 z-10 hidden">
+        <button id="prev-btn"
+          class="group flex items-center justify-center w-12 h-10 bg-white text-red-600 rounded-md hover:bg-red-600 hover:text-white transition">
+          <!-- Default (red) icon -->
+          <img src="/assets/red-left.svg" class="w-8 h-6 block group-hover:hidden" alt="Previous" />
+          <!-- Hover (white) icon -->
+          <img src="/assets/white-left.svg" class="w-8 h-6 hidden group-hover:block" alt="Previous Hover" />
+        </button>
+
+        <button id="next-btn"
+          class="group flex items-center justify-center w-12 h-10 bg-white text-red-600 rounded-md hover:bg-red-600 hover:text-white transition">
+          <!-- Default (red) icon -->
+          <img src="/assets/red-right.svg" class="w-8 h-6 block group-hover:hidden" alt="Next" />
+          <!-- Hover (white) icon -->
+          <img src="/assets/white-right.svg" class="w-8 h-6 hidden group-hover:block" alt="Next Hover" />
+        </button>
+      </div>
+
+     
+    </div>
+  </div>
+
+   <!-- Featured Products Section -->
+  <div class="w-full bg-[#FAFAFA] py-20 flex justify-center">
+    <div class="max-w-7xl w-full px-4">
+      <!-- Heading Section -->
+      <div class="text-center mb-16">
+        <h2 class="md:text-4xl text-4xl text-start md:text-center font-light font-Sacramento mb-4 text-[#F04231]">
+          Our Feature Products
+        </h2>
+        <h3 class="md:text-6xl text-4xl text-start md:text-center font-semibold font-Signika mb-2 text-[#301712]">
+          Our Featured Product
+        </h3>
+        <p class="text-base font-light font-Raleway text-start md:text-center text-gray-600 max-w-3xl mx-auto">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+        </p>
+      </div>
+
+      <!-- Cards Section -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-15">
+        <!-- Card 1 -->
+        <div class="flex flex-col items-start overflow-hidden w-auto" data-aos="fade-right">
+          <!-- Image section with slightly bigger grey background -->
+          <div class="mb-4 relative z-0">
+            <div class="bg-[#F5F5F5] p-2 pb-10 sm:p-2 md:p-8 md:pb-13">
+              <div class="border border-[#E1E1E1]">
+                <img
+                  src="/assets/roti.jpg"
+                  alt="Product 1"
+                  class="w-full h-60 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Description box — pulled upwards to overlap -->
+          <div class="-mt-10 ml-2 md:ml-8 group p-5 text-left border bg-white border-[#E1E1E1] w-auto hover:bg-[#301712] transition-all duration-300 relative z-10">
+            <h4 class="text-xl font-semibold font-Raleway mb-4 group-hover:text-white transition-all duration-300">
+              Bread
+            </h4>
+            <p class="text-md font-Raleway text-[#4F4F4F] mb-4 group-hover:text-white transition-all duration-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            </p>
+            <p class="text-red-600 font-semibold font-Raleway text-right text-md flex items-center justify-end gap-1">
+              Enquiry
+              <span>→</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flex flex-col items-start overflow-hidden w-auto" data-aos="fade-right">
+          <!-- Image section with slightly bigger grey background -->
+          <div class="mb-4 relative z-0">
+            <div class="bg-[#F5F5F5] p-2 pb-10 sm:p-2 md:p-8 md:pb-13">
+              <div class="border border-[#E1E1E1]">
+                <img
+                  src="/assets/roti.jpg"
+                  alt="Product 2"
+                  class="w-full h-60 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Description box — pulled upwards to overlap -->
+          <div class="-mt-10 ml-2 md:ml-8 group p-5 text-left border bg-white border-[#E1E1E1] w-auto hover:bg-[#301712] transition-all duration-300 relative z-10">
+            <h4 class="text-xl font-semibold font-Raleway mb-4 group-hover:text-white transition-all duration-300">
+              Bread
+            </h4>
+            <p class="text-md font-Raleway text-[#4F4F4F] mb-4 group-hover:text-white transition-all duration-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            </p>
+            <p class="text-red-600 font-semibold font-Raleway text-right text-md flex items-center justify-end gap-1">
+              Enquiry
+              <span>→</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex flex-col items-start overflow-hidden w-auto" data-aos="fade-right">
+          <!-- Image section with slightly bigger grey background -->
+          <div class="mb-4 relative z-0">
+            <div class="bg-[#F5F5F5] p-2 pb-10 sm:p-2 md:p-8 md:pb-13">
+              <div class="border border-[#E1E1E1]">
+                <img
+                  src="/assets/roti.jpg"
+                  alt="Product 3"
+                  class="w-full h-60 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Description box — pulled upwards to overlap -->
+          <div class="-mt-10 ml-2 md:ml-8 group p-5 text-left border bg-white border-[#E1E1E1] w-auto hover:bg-[#301712] transition-all duration-300 relative z-10">
+            <h4 class="text-xl font-semibold font-Raleway mb-4 group-hover:text-white transition-all duration-300">
+              Bread
+            </h4>
+            <p class="text-md font-Raleway text-[#4F4F4F] mb-4 group-hover:text-white transition-all duration-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            </p>
+            <p class="text-red-600 font-semibold font-Raleway text-right text-md flex items-center justify-end gap-1">
+              Enquiry
+              <span>→</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex flex-col items-start overflow-hidden w-auto" data-aos="fade-right">
+          <!-- Image section with slightly bigger grey background -->
+          <div class="mb-4 relative z-0">
+            <div class="bg-[#F5F5F5] p-2 pb-10 sm:p-2 md:p-8 md:pb-13">
+              <div class="border border-[#E1E1E1]">
+                <img
+                  src="/assets/roti.jpg"
+                  alt="Product 4"
+                  class="w-full h-60 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Description box — pulled upwards to overlap -->
+          <div class="-mt-10 ml-2 md:ml-8 group p-5 text-left border bg-white border-[#E1E1E1] w-auto hover:bg-[#301712] transition-all duration-300 relative z-10">
+            <h4 class="text-xl font-semibold font-Raleway mb-4 group-hover:text-white transition-all duration-300">
+              Bread
+            </h4>
+            <p class="text-md font-Raleway text-[#4F4F4F] mb-4 group-hover:text-white transition-all duration-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            </p>
+            <p class="text-red-600 font-semibold font-Raleway text-right text-md flex items-center justify-end gap-1">
+              Enquiry
+              <span>→</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Every Morning Section -->
+  <div class="h-[40vh] sm:h-[40vh] w-full flex flex-col sm:flex-row mt-40 ">
+
+    <!-- Left Section -->
+    <div class="w-full sm:w-1/2 h-[40vh] sm:h-full bg-[#C53527] items-center justify-center relative hidden md:flex"
+      data-aos="fade">
+      <img src="/assets/morning.svg" alt="Breakfast Illustration"
+        class="max-h-[80%] sm:max-h-[110%] w-auto -translate-y-8 sm:-translate-y-20 z-10 pl-40 sm:pl-50" />
+    </div>
+
+    <!-- Right Section -->
+    <div
+      class="w-full sm:w-1/2 h-[40vh] sm:h-full bg-cover bg-center flex flex-col items-start justify-center px-4 sm:px-8 gap-0"
+      style="background-image: url('/assets/morningBG.jpg')">
+      <h2 class="text-[#F04231] text-2xl sm:text-3xl md:text-5xl font-light font-Sacramento">
+        Freshly Baked Bread
+      </h2>
+      <h2
+        class="text-white text-2xl sm:text-3xl md:text-5xl font-Raleway max-w-[200px] sm:max-w-xs md:max-w-md font-extrabold">
+        EVERY MORNING
+      </h2>
+      <a href="/contact">
+        <a href="/about">
+            <button
+              class="flex items-center justify-center gap-2 bg-gradient-to-r from-[#C53527] to-[#F04231] text-white font-semibold text-md sm:text-md px-5 sm:px-7 py-2 sm:py-3 rounded-full hover:from-[#c53427] hover:to-[#e65c2b] transition-colors font-[Raleway] mt-6 sm:mt-11">
+              View All
+              <img src="/assets/btnRYTArrow.svg" class="w-6 h-6" />
+            </button>
+          </a>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Testimonial Section -->
+  <div
+    class="w-full h-auto min-h-[100vh] sm:min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center"
+    style="background-image: url('/assets/clientBG.svg')">
+    <div
+      class="max-w-7xl w-full flex flex-col md:flex-row items-stretch gap-8 sm:gap-12 md:gap-20 px-4 sm:px-6 py-8 sm:py-10 relative">
+      <!-- Left Side -->
+      <div class="flex-1 flex flex-col gap-6 mr-6" data-aos="fade-up">
+        <div class="text-left md:text-left mt-19">
+          <h1 class="text-4xl sm:text-3xl md:text-4xl font-light text-[#F04231] font-Sacramento pl-0 sm:pl-5">
+            Our Clients
+          </h1>
+          <h2
+            class="text-4xl sm:text-4xl md:text-6xl font-bold text-[#301712] font-Signika mt-1 md:mt-2 md:text-right pr-0 pb-5">
+            Customer Praise for Our Organic Online Store
+          </h2>
+        </div>
+        <p
+          class="text-md sm:text-sm md:text-base text-[#4F4F4F] font-Raleway leading-relaxed text-justify pl-0 sm:pl-17">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam,
+        </p>
+        <div class="mt-auto self-end pb-10">
+          <a href="/about">
+            <button
+              class="flex items-center justify-center gap-2 bg-gradient-to-r from-[#C53527] to-[#F04231] text-white font-semibold text-md sm:text-md px-5 sm:px-7 py-2 sm:py-3 rounded-full hover:from-[#c53427] hover:to-[#e65c2b] transition-colors font-[Raleway] mt-6 sm:mt-11">
+              View All 
+              <img src="/assets/btnRYTArrow.svg" class="w-6 h-6" />
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="flex-1 flex items-center justify-center relative" data-aos="fade-down">
+        <div
+          class="relative w-[360px] h-[360px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] flex items-center justify-center">
+          <!-- Outer Circle SVG as background -->
+          <div class="absolute w-full h-full rounded-full overflow-hidden z-0">
+            <img src="/assets/circle.svg" alt="Outer circle" class="w-full h-full object-contain rounded-full"
+              draggable="false" />
+          </div>
+
+          <!-- Colored Inner Circle with content -->
+          <div id="testimonial-content"
+            class="w-[300px] h-[300px] sm:w-[280px] sm:h-[280px] md:w-[520px] md:h-[520px] bg-[#F1EDDC] rounded-full flex flex-col items-center justify-center text-center px-1 sm:px-6 md:px-10 overflow-hidden z-10">
+            <!-- Stars -->
+            <div id="testimonial-stars" class="flex gap-1 text-[#F04231] text-2xl sm:text-3xl md:text-5xl mb-1 sm:mb-2">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p id="testimonial-text"
+              class="text-[#333] text-sm sm:text-md md:text-[16px] font-Raleway leading-relaxed max-w-[90%]">
+              Amazing organic products! The quality is unmatched, and the
+              delivery is always on time.
+            </p>
+
+            <!-- Name -->
+            <div class="mt-2 sm:mt-4">
+              <h4 id="testimonial-name" class="text-[#C53527] text-sm sm:text-sm md:text-[16px] font-bold font-Raleway">
+                John Doe
+              </h4>
+              <p id="testimonial-role" class="text-[#CC8E44] text-sm sm:text-sm md:text-[16px] font-Raleway font-bold">
+                Happy Customer
+              </p>
+            </div>
+          </div>
+
+          <!-- Left Button -->
+<button id="testimonial-prev"
+  class="flex items-center justify-center w-10 sm:w-12 h-8 sm:h-10 bg-white border border-[#DEDEDE] text-red-600 rounded-md hover:bg-red-600 hover:text-white transition-colors duration-300 group absolute left-[10px] sm:left-[25px] top-1/2 -translate-y-1/2 z-20">
+  <img src="/assets/white-left.svg" class="md:w-8 md:h-8  w-6 h-6 hidden group-hover:block" />
+  <img src="/assets/red-left.svg" class="md:w-8 md:h-8  w-5 h-6 block group-hover:hidden" />
+</button>
+
+<!-- Right Button -->
+<button id="testimonial-next"
+  class="flex items-center justify-center w-10 sm:w-12 h-8 sm:h-10  bg-white border border-[#DEDEDE] text-red-600 rounded-md hover:bg-red-600 hover:text-white transition-colors duration-300 group absolute right-[10px] sm:right-[25px] top-1/2 -translate-y-1/2 z-20">
+  <img src="/assets/white-right.svg" class="md:w-8 md:h-8  w-6 h-6 hidden group-hover:block" />
+  <img src="/assets/red-right.svg" class="md:w-8 md:h-8  w-6 h-6 block group-hover:hidden" />
+</button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaf Image -->
+    <div class="max-w-[100vw] w-full relative">
+      <img src="/assets/leaf2.svg" alt=""
+        class="absolute left-0 bottom-10 sm:bottom-20 top-1/1 transform -translate-y-1/1 w-[100px] sm:w-[120px] md:w-[150px] lg:w-[300px] z-[-10]" />
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Blog Section -->
+  <div>
+    <div class="w-full h-auto min-h-screen px-4 sm:px-0 py-20 bg-[#FFFCED] text-center">
+      <!-- Heading Section -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-center text-start sm:text-4xl font-light text-[#F04231] mb-4 font-Sacramento">
+          From our blog
+        </h2>
+        <h3 class="text-4xl md:text-center text-start sm:text-6xl font-bold mb-10 font-Signika">
+          Latest News & Articles Directly from Blog
+        </h3>
+        <p class="text-gray-700 md:text-center text-start text-md sm:text-base font-Raleway">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+          erat volutpat. Ut wisi enim ad minim veniam,
+        </p>
+      </div>
+
+      <!-- Blog Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" data-aos="fade">
+        <!-- Blog Card 1 -->
+        <div class="flex flex-col items-center text-center relative w-full max-w-sm group">
+          <!-- Blog Image with dark overlay on hover -->
+          <div class="relative w-full h-full">
+            <img src="/assets/blog1.jpg" alt="Blog 1"
+              class="w-full h-full object-cover mb-0 transition-all duration-300" />
+            <!-- Black overlay -->
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+            </div>
+          </div>
+
+          <!-- Overlapping Text Area -->
+          <div
+            class="bg-white w-[80%] -mt-20 shadow-lg z-10 px-4 py-3 text-left group-hover:bg-[#C53527] transition-all duration-300">
+            <h1
+              class="text-md mb-2 font-light font-Raleway text-[#7B7B7B] group-hover:text-white transition-colors duration-300">
+              17 March 2025
+            </h1>
+            <h2
+              class="text-lg mb-2 font-semibold font-Raleway text-[#301712] group-hover:text-white transition-colors duration-300">
+              Soft Toasted Bread For Breakfast
+            </h2>
+
+            <div class="flex w-full h-[2px] mb-3">
+              <div class="w-[20%] bg-[#F04231] group-hover:bg-white transition-colors duration-300"></div>
+              <div class="w-[80%] bg-[#CDCDCD] group-hover:bg-white/40 transition-colors duration-300"></div>
+            </div>
+
+            <div class="w-full text-right">
+              <a href="/blog-details">
+                <p
+                  class="text-md font-bold cursor-pointer font-Raleway text-[#301712] group-hover:text-white transition-colors duration-300">
+                  Read More →
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="flex flex-col items-center text-center relative w-full max-w-sm group">
+          <!-- Blog Image with dark overlay on hover -->
+          <div class="relative w-full h-full">
+            <img src="/assets/blog2.jpg" alt="Blog 2"
+              class="w-full h-full object-cover mb-0 transition-all duration-300" />
+            <!-- Black overlay -->
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+            </div>
+          </div>
+
+          <!-- Overlapping Text Area -->
+          <div
+            class="bg-white w-[80%] -mt-20 shadow-lg z-10 px-4 py-3 text-left group-hover:bg-[#C53527] transition-all duration-300">
+            <h1
+              class="text-md mb-2 font-light font-Raleway text-[#7B7B7B] group-hover:text-white transition-colors duration-300">
+              17 March 2025
+            </h1>
+            <h2
+              class="text-lg mb-2 font-semibold font-Raleway text-[#301712] group-hover:text-white transition-colors duration-300">
+              Soft Toasted Bread For Breakfast
+            </h2>
+
+            <div class="flex w-full h-[2px] mb-3">
+              <div class="w-[20%] bg-[#F04231] group-hover:bg-white transition-colors duration-300"></div>
+              <div class="w-[80%] bg-[#CDCDCD] group-hover:bg-white/40 transition-colors duration-300"></div>
+            </div>
+
+            <div class="w-full text-right">
+              <ittle="blog-details">
+                <p
+                  class="text-md font-bold cursor-pointer font-Raleway text-[#301712] group-hover:text-white transition-colors duration-300">
+                  Read More →
+                </p>
+                </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="flex flex-col items-center text-center relative w-full max-w-sm group">
+          <!-- Blog Image with dark overlay on hover -->
+          <div class="relative w-full h-full">
+            <img src="/assets/blog3.jpg" alt="Blog 3"
+              class="w-full h-full object-cover mb-0 transition-all duration-300" />
+            <!-- Black overlay -->
+            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+            </div>
+          </div>
+
+          <!-- Overlapping Text Area -->
+          <div
+            class="bg-white w-[80%] -mt-20 shadow-lg z-10 px-4 py-3 text-left group-hover:bg-[#C53527] transition-all duration-300">
+            <h1
+              class="text-md mb-2 font-light font-Raleway text-[#7B7B7B] group-hover:text-white transition-colors duration-300">
+              17 March 2025
+            </h1>
+            <h2
+              class="text-lg mb-2 font-semibold font-Raleway text-[#301712] group-hover:text-white transition-colors duration-300">
+              Soft Toasted Bread For Breakfast
+            </h2>
+
+            <div class="flex w-full h-[2px] mb-3">
+              <div class="w-[20%] bg-[#F04231] group-hover:bg-white transition-colors duration-300"></div>
+              <div class="w-[80%] bg-[#CDCDCD] group-hover:bg-white/40 transition-colors duration-300"></div>
+            </div>
+
+            <div class="w-full text-right">
+              <a href="/blog-details">
+                <p
+                  class="text-md font-bold cursor-pointer font-Raleway text-[#301712] group-hover:text-white transition-colors duration-300">
+                  Read More →
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centered Button After Cards -->
+      <div class="flex justify-center mt-8">
+        <a href="/blog">
+          <button
+            class="flex items-center justify-center gap-2 bg-gradient-to-r from-[#C53527] to-[#F04231] text-white font-semibold text-md sm:text-md px-5 sm:px-7 py-2 sm:py-3 rounded-full hover:from-[#c53427] hover:to-[#e65c2b] transition-colors font-Raleway mt-6 sm:mt-11">
+            View All
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+
+   
+  </div>
+
+  <!-- Footer Section -->
+<div class="relative bg-[#301712] text-white overflow-hidden h-auto  ">
+   <!-- Top Background Image -->
+    <img class="w-full absolute top-0 left-0 z-0" src="/assets/blog.svg" alt="background" />
+  <!-- Newsletter Section -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:pt-60  pt-20 py-15 text-center ">
+    <h1 class="md:text-6xl text-3xl font-bold mb-4 font-Signika">
+      Our Newsletter
+    </h1>
+    <p class="text-md md:text-md mb-6 font-Raleway max-w-4xl mx-auto">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+      nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+      volutpat. Ut wisi enim ad minim veniam,
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <!-- Underline wrapper -->
+      <div class="flex items-center border-b border-white w-full sm:w-5xl mt-10">
+        <input
+          type="text"
+          placeholder="Your email address"
+          class="font-Raleway bg-transparent font-light py-2 px-4 text-md outline-none w-full text-white placeholder-white mb-3"
+        />
+        <button class="text-[#F04231] text-md font-Raleway font-light border-none relative -mt-3 px-2">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Leaf Image Layer -->
+  <div
+    class="absolute inset-0 z-0 bg-no-repeat bg-center bg-contain opacity-80 pointer-events-none"
+    style="background-image: url('/assets/ff.svg')"
+  ></div>
+
+  <!-- Footer Main Content -->
+  <div class="relative z-10">
+    <div class="max-w-7xl mx-auto px-4  md:py-40 grid md:grid-cols-3 gap-10 md:gap-30 text-left py-8">
+      <!-- Center Logo & Info -->
+      <div class="order-1 md:order-2 text-center">
+        <a href="/">
+          <img src="/assets/logo2.svg " alt="Logo" class="mx-auto mb-6 w-[200px]" />
+        </a>
+        <p class="text-md font-Raleway max-w-sm mx-auto">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+          erat volutpat. Ut wisi enim ad minim veniam,
+        </p>
+        <div class="flex justify-center space-x-4 mt-8">
+          <!-- Instagram -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <!-- Facebook -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </div>
+          <!-- YouTube -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </div>
+          <!-- Twitter/X -->
+<div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group rounded">
+  <!-- Official X (Twitter) SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.5 3h4.36l3.76 5.54L17.92 3H21l-6.77 7.54L21.88 21h-4.4l-4.15-6.17L8.06 21H5l7.15-8.03L4.5 3z" />
+  </svg>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="order-2 md:order-1">
+        <h2 class="md:text-lg text-2xl font-semibold mb-4 font-Signika">
+          Quick Links
+        </h2>
+        <ul class="space-y-3 text-md font-Raleway">
+          <li class="mb-3"><a href="/">Home</a></li>
+          <li class="mb-3"><a href="/about">About</a></li>
+          <li class="mb-3"><a href="/product">Product</a></li>
+          <li class="mb-3"><a href="/testimonial">Testimonial</a></li>
+          <li class="mb-3"><a href="/blog">Blog</a></li>
+          <li class="mb-3"><a href="/thanku">Thank You</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="order-3 mb-5 md:pl-20">
+        <h2 class="md:text-lg text-2xl font-semibold mb-4 font-Signika">
+          Contact
+        </h2>
+        <ul class="text-md space-y-4 font-Raleway">
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 pt-1">
+              <img src="/assets/sd.svg" alt="globe" />
+            </div>
+            <span>
+              No: 58 A, East Madison Street,
+              <br /> Baltimore, MD, USA 4508
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="/assets/dddd.svg" alt="Phone" class="w-5 pt-1" />
+            <span>
+              +91 98955 03930
+              <br />
+              +91 98955 03930
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="/assets/ddd.svg" alt="Email" class="w-5 pt-1" />
+            <span>info@amalfoods.in</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Footer -->
+<div class="bg-[#FFFCED] text-sm text-gray-800 py-6 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center font-Raleway gap-2">
+    <p class="text-[16px]">© Copyright 2024, all rights reserved.</p>
+    <p class="text-[16px]">
+      Powered by <span class="font-semibold ml-1">spydernet</span>
+    </p>
+  </div>
+</div>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>

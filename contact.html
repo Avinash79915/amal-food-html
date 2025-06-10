@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.min.js"></script>
+
+</head>
+
+<body class="m-0 p-0 box-border overflow-x-hidden">
+  <!-- Navabar Section -->
+
+  <nav id="navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-cover bg-center md:py-24 py-4"
+    style="background-image: url('/assets/nav-bg.svg')">
+    <div
+      class="max-w-7xl mx-auto relative flex items-center justify-between px-4 sm:px-6 transition-all duration-300 ease-in-out">
+      <!-- Logo & Call Info -->
+      <div class="flex items-center gap-4 z-10">
+        <a href="/">
+          <img id="logo" src="/assets/logo.svg" alt="Amala Foods Logo"
+            class="h-10 sm:h-16 md:absolute md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 pb-2 md:p-0 transition-all duration-300 ease-in-out" />
+        </a>
+        <div class="hidden md:block text-sm lg:text-base text-[#301712]">
+          Call Now: <span class="font-semibold">+91 98959 99955</span>
+        </div>
+      </div>
+
+      <!-- Nav Links & Hamburger -->
+      <div class="flex items-center z-10">
+        <div class="hidden md:flex gap-2 lg:gap-6 text-md font-semibold text-[#301712]">
+          <a href="/" class="hover:text-[#5a2d0c] transition-colors">Home</a>
+          <a href="/aboutUs.html" class="hover:text-[#5a2d0c] transition-colors">About Us</a>
+          <a href="/product.html" class="hover:text-[#5a2d0c] transition-colors">Products</a>
+          <a href="/whyus.html" class="hover:text-[#5a2d0c] transition-colors">Why us</a>
+          <a href="/contact.html" class="hover:text-[#5a2d0c] transition-colors">Contact Us</a>
+        </div>
+        <button id="menuToggle" class="md:hidden text-[#301712] focus:outline-none pb-6" aria-label="Toggle menu">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-menu">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="overflow-hidden fixed top-0 right-0 h-screen w-[75%] sm:w-[50%] bg-gray-100 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
+      <div class="relative flex flex-col h-full text-[#301712] text-lg font-semibold">
+        <!-- Top bar -->
+        <div class="flex items-center justify-between p-4 pt-10">
+          <img src="/assets/logo.svg" alt="Amala Foods Logo" class="h-8" />
+          <button id="closeMenu" class="text-[#301712] focus:outline-none" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="hover:text-[#5a2d0c] transition-colors pb-1">
+              <line x1="18" x2="6" y1="6" y2="18" />
+              <line x1="6" x2="18" y1="6" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-col items-start gap-6 px-6 pt-20">
+          <a href="/" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Home</a>
+          <a href="/aboutUs.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">About Us</a>
+          <a href="/product.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Products</a>
+          <a href="/contact.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Contact Us</a>
+          <a href="/blog.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Blog</a>
+          <div class="text-sm text-[#301712] mt-4">
+            Call Now: <span class="font-semibold">+91 98959 99955</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="backdrop"
+      class="fixed inset-0 min-h-screen bg-transparent bg-opacity-50 backdrop-blur-sm md:hidden z-40 hidden"></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="w-full   relative overflow-visible z-10">
+   
+
+    <!-- Overlay Content -->
+    <div class="relative z-50 h-full">
+    
+
+      <!-- Hero Content -->
+      <div class="w-full min-h-[60vh] relative overflow-visible">
+        <!-- About Hero Section -->
+<div class="w-full min-h-[60vh] relative overflow-visible">
+  <!-- Background Image (60vh height) -->
+  <div
+    class="w-full h-[60vh] bg-cover bg-center relative"
+    style="background-image: url('/assets/AboutBG2.jpg')"
+  >
+    <!-- ABOUT Text Centered Vertically -->
+    <div class="absolute inset-0 flex items-end justify-center">
+      <h1
+        class="text-4xl sm:text-5xl lg:text-7xl font-bold font-Signika text-white bg-clip-text pb-20"
+        data-aos="fade"
+      >
+        Contact Us
+      </h1>
+    </div>
+
+    <!-- White Box with "Home - About" -->
+    <div class="absolute bottom-[-35px] left-1/2 transform -translate-x-1/2 bg-white px-10 sm:px-16 md:px-20 lg:px-24 py-5 sm:py-3 md:py-4 shadow-md font-Raleway text-[#301712] font-medium text-md sm:text-base md:text-md z-5">
+      Home - Contact Us
+    </div>
+  </div>
+</div>
+        
+      </div>
+
+      <!-- Arrows -->
+      <div class="absolute bottom-20 right-4 sm:right-80 flex gap-2 sm:gap-4 z-10 hidden">
+        <button id="prev-btn"
+          class="group flex items-center justify-center w-12 h-10 bg-white text-red-600 rounded-md hover:bg-red-600 hover:text-white transition">
+          <!-- Default (red) icon -->
+          <img src="/assets/red-left.svg" class="w-8 h-6 block group-hover:hidden" alt="Previous" />
+          <!-- Hover (white) icon -->
+          <img src="/assets/white-left.svg" class="w-8 h-6 hidden group-hover:block" alt="Previous Hover" />
+        </button>
+
+        <button id="next-btn"
+          class="group flex items-center justify-center w-12 h-10 bg-white text-red-600 rounded-md hover:bg-red-600 hover:text-white transition">
+          <!-- Default (red) icon -->
+          <img src="/assets/red-right.svg" class="w-8 h-6 block group-hover:hidden" alt="Next" />
+          <!-- Hover (white) icon -->
+          <img src="/assets/white-right.svg" class="w-8 h-6 hidden group-hover:block" alt="Next Hover" />
+        </button>
+      </div>
+
+     
+    </div>
+  </div>
+
+   
+   <div>
+    <!-- Map and Contact Section -->
+    <div
+      class="w-full h-auto flex flex-col lg:flex-row md:gap-0 gap-10"
+      data-aos="fade-down"
+    >
+      <!-- Left Half - Embedded Map -->
+      <div class="w-full lg:w-1/2 h-[40vh] lg:h-[60vh]">
+        <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.6484574851163!2d-122.42189338467718!3d37.77492927975902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c2f5e50b9%3A0x4b0d42d1a7b54211!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sin!4v1718019650000!5m2!1sen!2sin"
+  width="100%"
+  height="100%"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+
+      </div>
+
+      <!-- Right Half - Split Horizontally -->
+      <div class="w-full lg:w-1/2 h-auto lg:h-[60vh] md:gap-0 gap-10 flex flex-col sm:flex-row">
+        <!-- Left 40% - Contact Info -->
+        <div class="w-full sm:w-[40%] h-[40vh] lg:h-full bg-[#FFFCED] text-black flex flex-col items-start justify-center px-6 sm:px-10 py-6 sm:py-8 space-y-6">
+          <!-- Heading -->
+          <h2 class="text-3xl sm:text-5xl font-semibold font-Signika text-start">
+            Get in Touch
+          </h2>
+
+          <!-- Contact Info -->
+          <div class="text-start space-y-4">
+            <ul class="space-y-3 text-md sm:text-sm lg:text-base font-Raleway">
+              <li class="flex items-start justify-start gap-5">
+                <img src="/assets/globe.svg" alt="globe" class="w-5 pt-1" />
+                <span>
+                  No: 58 A, East Madison Street, <br />
+                  Baltimore, MD, USA 4508
+                </span>
+              </li>
+              <li class="flex items-start justify-start gap-5">
+                <img src="/assets/phone.svg" alt="phone" class="w-5 pt-1" />
+                <span>
+                  +91 98955 03930
+                  <br /> +91 98955 03930
+                </span>
+              </li>
+              <li class="flex items-start justify-start gap-5">
+                <img src="/assets/mail.svg" alt="mail" class="w-5 pt-1" />
+                <span>info@amalfoods.in</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex justify-start gap-4 mt-4">
+            <!-- Instagram -->
+            <div class="w-10 h-10 border border-red-600 rounded-md flex items-center justify-center text-black hover:text-white hover:bg-red-600 transition-all duration-300 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.543.069-2.927.384-4.013 1.47-1.086 1.086-1.401 2.47-1.47 4.013-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.069 1.543.384 2.927 1.47 4.013 1.086 1.086 2.47 1.401 4.013 1.47 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.543-.069 2.927-.384 4.013-1.47 1.086-1.086 1.401-2.47 1.47-4.013.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.069-1.543-.384-2.927-1.47-4.013-1.086-1.086-2.47-1.401-4.013-1.47-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.324c-2.297 0-4.162-1.865-4.162-4.162s1.865-4.162 4.162-4.162 4.162 1.865 4.162 4.162-1.865 4.162-4.162 4.162zm6.406-11.845c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/>
+              </svg>
+            </div>
+            <!-- Facebook -->
+            <div class="w-10 h-10 border border-red-600 rounded-md flex items-center justify-center text-black hover:text-white hover:bg-red-600 transition-all duration-300 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.063 24 12.073z"/>
+              </svg>
+            </div>
+            <!-- YouTube -->
+            <div class="w-10 h-10 border border-red-600 rounded-md flex items-center justify-center text-black hover:text-white hover:bg-red-600 transition-all duration-300 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a2.873 2.873 0 00-2.027-2.027C19.736 3.5 12 3.5 12 3.5s-7.736 0-9.471.659a2.873 2.873 0 00-2.027 2.027C.5 7.921.5 12 .5 12s0 4.079.659 5.814a2.873 2.873 0 002.027 2.027C4.921 20.5 12 20.5 12 20.5s7.736 0 9.471-.659a2.873 2.873 0 002.027-2.027c.659-1.735.659-5.814.659-5.814s0-4.079-.659-5.814zm-13.498 9.314V8.5l6.5 3.5-6.5 3.5z"/>
+              </svg>
+            </div>
+            <!-- Twitter/X -->
+            <div class="w-10 h-10 border border-red-600 rounded-md flex items-center justify-center text-black hover:text-white hover:bg-red-600 transition-all duration-300 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 60% - Image -->
+        <div class="w-full sm:w-[60%] h-[40vh] sm:h-[60vh] lg:h-full">
+          <img
+            src="/assets/contact.jpg"
+            alt="Get in Touch Visual"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <!-- Form Section -->
+    <div class="w-full flex items-center justify-center bg-white px-4 py-4">
+      <div class="w-full max-w-7xl mx-auto py-12 flex flex-col items-center">
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-6xl font-semibold font-Signika text-center mb-4">
+          Leave a Message
+        </h2>
+
+        <!-- Subheading / Paragraph -->
+        <p class="text-gray-600 text-center max-w-3xl mb-10 font-Raleway">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+        </p>
+
+        <!-- Form -->
+        <form class="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 font-Raleway">
+          <!-- Your Name -->
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="border border-gray-300 rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-red-400"
+          />
+
+          <!-- Your Email -->
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="border border-gray-300 rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-red-400"
+          />
+
+          <!-- Your Phone -->
+          <input
+            type="tel"
+            placeholder="Your Phone"
+            class="border border-gray-300 rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-red-400"
+          />
+
+          <!-- Subject -->
+          <input
+            type="text"
+            placeholder="Subject"
+            class="border border-gray-300 rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-red-400"
+          />
+
+          <!-- Message -->
+          <textarea
+            rows="5"
+            placeholder="Your Message"
+            class="border border-gray-300 rounded-md px-4 py-3 w-full sm:col-span-2 focus:outline-none focus:ring-2 focus:ring-red-400 resize-none"
+          ></textarea>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="bg-[#E50914] hover:bg-red-600 text-white font-semibold text-md py-3 rounded-xl w-full sm:col-span-2 transition-all duration-200"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>    
+  <!-- Footer Section -->
+<div class="relative bg-[#301712] text-white overflow-hidden h-auto  ">
+   <!-- Top Background Image -->
+    <img class="w-full absolute top-0 left-0 z-0" src="/assets/bottom.svg" alt="background" />
+  <!-- Newsletter Section -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:pt-60  pt-20 py-15 text-center ">
+    <h1 class="md:text-6xl text-3xl font-bold mb-4 font-Signika">
+      Our Newsletter
+    </h1>
+    <p class="text-md md:text-md mb-6 font-Raleway max-w-4xl mx-auto">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
+      nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+      volutpat. Ut wisi enim ad minim veniam,
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <!-- Underline wrapper -->
+      <div class="flex items-center border-b border-white w-full sm:w-5xl mt-10">
+        <input
+          type="text"
+          placeholder="Your email address"
+          class="font-Raleway bg-transparent font-light py-2 px-4 text-md outline-none w-full text-white placeholder-white mb-3"
+        />
+        <button class="text-[#F04231] text-md font-Raleway font-light border-none relative -mt-3 px-2">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Leaf Image Layer -->
+  <div
+    class="absolute inset-0 z-0 bg-no-repeat bg-center bg-contain opacity-80 pointer-events-none"
+    style="background-image: url('/assets/ff.svg')"
+  ></div>
+
+  <!-- Footer Main Content -->
+  <div class="relative z-10">
+    <div class="max-w-7xl mx-auto px-4  md:py-40 grid md:grid-cols-3 gap-10 md:gap-30 text-left py-8">
+      <!-- Center Logo & Info -->
+      <div class="order-1 md:order-2 text-center">
+        <a href="/">
+          <img src="/assets/logo2.svg " alt="Logo" class="mx-auto mb-6 w-[200px]" />
+        </a>
+        <p class="text-md font-Raleway max-w-sm mx-auto">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+          erat volutpat. Ut wisi enim ad minim veniam,
+        </p>
+        <div class="flex justify-center space-x-4 mt-8">
+          <!-- Instagram -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <!-- Facebook -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </div>
+          <!-- YouTube -->
+          <div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </div>
+          <!-- Twitter/X -->
+<div class="w-10 h-10 border border-[#F04231] flex items-center justify-center transition-all duration-300 hover:bg-white hover:border-white group rounded">
+  <!-- Official X (Twitter) SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-colors duration-300 group-hover:text-[#F04231]" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.5 3h4.36l3.76 5.54L17.92 3H21l-6.77 7.54L21.88 21h-4.4l-4.15-6.17L8.06 21H5l7.15-8.03L4.5 3z" />
+  </svg>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="order-2 md:order-1">
+        <h2 class="md:text-lg text-2xl font-semibold mb-4 font-Signika">
+          Quick Links
+        </h2>
+        <ul class="space-y-3 text-md font-Raleway">
+          <li class="mb-3"><a href="/">Home</a></li>
+          <li class="mb-3"><a href="/aboutUs.html">About</a></li>
+          <li class="mb-3"><a href="/product.html">Product</a></li>
+          <li class="mb-3"><a href="/testimonial.html">Testimonial</a></li>
+          <li class="mb-3"><a href="/blog.html">Blog</a></li>
+          <li class="mb-3"><a href="/thanku.html">Thank You</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="order-3 mb-5 md:pl-20">
+        <h2 class="md:text-lg text-2xl font-semibold mb-4 font-Signika">
+          Contact
+        </h2>
+        <ul class="text-md space-y-4 font-Raleway">
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 pt-1">
+              <img src="/assets/sd.svg" alt="globe" />
+            </div>
+            <span>
+              No: 58 A, East Madison Street,
+              <br /> Baltimore, MD, USA 4508
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="/assets/dddd.svg" alt="Phone" class="w-5 pt-1" />
+            <span>
+              +91 98955 03930
+              <br />
+              +91 98955 03930
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <img src="/assets/ddd.svg" alt="Email" class="w-5 pt-1" />
+            <span>info@amalfoods.in</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Footer -->
+<div class="bg-[#FFFCED] text-sm text-gray-800 py-6 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center font-Raleway gap-2">
+    <p class="text-[16px]">© Copyright 2024, all rights reserved.</p>
+    <p class="text-[16px]">
+      Powered by <span class="font-semibold ml-1">spydernet</span>
+    </p>
+  </div>
+</div>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
