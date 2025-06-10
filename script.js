@@ -263,75 +263,43 @@ document.addEventListener('DOMContentLoaded', () => {
   updateTestimonial();
 });
 
+ document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll("#counter-section h2[data-target]");
+    let hasAnimated = false;
 
- document.addEventListener('DOMContentLoaded', () => {
-  console.log('script.js loaded'); // Debug: Confirm script execution
+    function animateCounter(counter) {
+      const target = +counter.getAttribute("data-target");
+      const duration = 2000;
+      const frameRate = 60;
+      const increment = target / (duration / (1000 / frameRate));
+      let current = 0;
 
+      const update = () => {
+        current += increment;
+        if (current < target) {
+          counter.textContent = Math.floor(current) + "k+";
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = target + "k+";
+        }
+      };
 
-  // Counter Animation using CountUp.js
-  if (typeof CountUp !== 'undefined') {
-    console.log('CountUp.js loaded'); // Debug: Confirm CountUp.js
-    const counters = {
-      experience: 10,
-      buns: 25,
-      bread: 35,
-      customers: 40,
-    };
-
-    const counterSection = document.getElementById('counter-section');
-    const counterElements = {
-      experience: document.getElementById('counter-experience'),
-      buns: document.getElementById('counter-buns'),
-      bread: document.getElementById('counter-bread'),
-      customers: document.getElementById('counter-customers'),
-    };
-
-    if (!counterSection || Object.values(counterElements).some(el => !el)) {
-      console.error('Counter section or elements not found. Check HTML IDs.');
-      // Fallback: Set static values if elements are missing
-      if (counterElements.experience) counterElements.experience.textContent = '10k+';
-      if (counterElements.buns) counterElements.buns.textContent = '25k+';
-      if (counterElements.bread) counterElements.bread.textContent = '35k+';
-      if (counterElements.customers) counterElements.customers.textContent = '40k+';
-      return;
+      update();
     }
 
-    const countUpInstances = {
-      experience: new CountUp('counter-experience', counters.experience, { duration: 7, suffix: 'k+' }),
-      buns: new CountUp('counter-buns', counters.buns, { duration: 2, suffix: 'k+' }),
-      bread: new CountUp('counter-bread', counters.bread, { duration: 2, suffix: 'k+' }),
-      customers: new CountUp('counter-customers', counters.customers, { duration: 2, suffix: 'k+' }),
-    };
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top <= (window.innerHeight || document.documentElement.clientHeight);
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log('Counter section in view, starting animation'); // Debug: Confirm observer trigger
-          Object.values(countUpInstances).forEach((instance) => {
-            if (!instance.error) {
-              instance.start();
-            } else {
-              console.error('CountUp instance error:', instance.error);
-            }
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
+    function handleScroll() {
+      const section = document.getElementById("counter-section");
+      if (!hasAnimated && isInViewport(section)) {
+        counters.forEach(counter => animateCounter(counter));
+        hasAnimated = true;
+        window.removeEventListener("scroll", handleScroll);
+      }
+    }
 
-    observer.observe(counterSection);
-  } else {
-    console.error('CountUp.js library not loaded. Please ensure CountUp.js CDN is included.');
-    // Fallback: Set static values if CountUp.js is missing
-    const counterElements = {
-      experience: document.getElementById('counter-experience'),
-      buns: document.getElementById('counter-buns'),
-      bread: document.getElementById('counter-bread'),
-      customers: document.getElementById('counter-customers'),
-    };
-    if (counterElements.experience) counterElements.experience.textContent = '10k+';
-    if (counterElements.buns) counterElements.buns.textContent = '25k+';
-    if (counterElements.bread) counterElements.bread.textContent = '35k+';
-    if (counterElements.customers) counterElements.customers.textContent = '40k+';
-  }
-});
+    window.addEventListener("scroll", handleScroll);
+  });

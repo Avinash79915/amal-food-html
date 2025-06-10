@@ -18,7 +18,7 @@
 <body class="m-0 p-0 box-border overflow-x-hidden">
   <!-- Navabar Section -->
 
- <nav id="navbar"
+  <nav id="navbar"
     class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-cover bg-center md:py-24 py-4"
     style="background-image: url('/assets/nav-bg.svg')">
     <div
@@ -40,8 +40,8 @@
           <a href="/" class="hover:text-[#5a2d0c] transition-colors">Home</a>
           <a href="/aboutUs.html" class="hover:text-[#5a2d0c] transition-colors">About Us</a>
           <a href="/product.html" class="hover:text-[#5a2d0c] transition-colors">Products</a>
-          <a href="/whyus.html" class="hover:text-[#5a2d0c] transition-colors">Why us</a>
-          <a href="/contact.html" class="hover:text-[#5a2d0c] transition-colors">Contact Us</a>
+          <a href="/whyus" class="hover:text-[#5a2d0c] transition-colors">Why us</a>
+          <a href="/contact" class="hover:text-[#5a2d0c] transition-colors">Contact Us</a>
         </div>
         <button id="menuToggle" class="md:hidden text-[#301712] focus:outline-none pb-6" aria-label="Toggle menu">
           <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
@@ -75,10 +75,10 @@
         <!-- Links -->
         <div class="flex flex-col items-start gap-6 px-6 pt-20">
           <a href="/" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Home</a>
-          <a href="/aboutUs.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">About Us</a>
-          <a href="/product.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Products</a>
-          <a href="/contact.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Contact Us</a>
-          <a href="/blog.html" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Blog</a>
+          <a href="/about" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">About Us</a>
+          <a href="/product" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Products</a>
+          <a href="/contact" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Contact Us</a>
+          <a href="/blog" class="hover:text-[#5a2d0c]" onclick="closeMobileMenu()">Blog</a>
           <div class="text-sm text-[#301712] mt-4">
             Call Now: <span class="font-semibold">+91 98959 99955</span>
           </div>
@@ -272,7 +272,7 @@
 </div>
 
   <!-- Why Us Section -->
-  <div class="w-full bg-white relative overflow-hidden py-8 md:py-0 mb-35">
+  <div class="w-full bg-white relative overflow-hidden py-8 md:py-0 mb-25">
     <div class="absolute top-0 left-0 h-[70%] w-full bg-[#FFFCED]"></div>
 
     <div
@@ -349,13 +349,13 @@
       class="absolute bottom-0 right-0 h-auto w-[100px] sm:w-[150px] md:w-[200px] lg:w-[250px] z-1" />
   </div>
 
- 
+  
 <!-- Facilities Section -->
-  <div class="w-full bg-white relative overflow-hidden pt-8 pb-24 md:pt-10 md:pb-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 px-0 sm:px-6" data-aos="fade">
+  <div class="w-full bg-white relative overflow-hidden pt-8 pb-24 md:pt-10 md:pb-6  md:mt-36 ">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-center gap-6 md:gap-8 px-0 sm:px-6" data-aos="fade">
       <!-- Left Section -->
-      <div class="flex-1 flex flex-col justify-between h-full gap-6 z-30 md:pb-100">
-        <div>
+      <div class="flex-1 flex flex-col justify-between h-auto gap-6 z-30 relative  ">
+        <div class="mb-35">
           <h1 class="text-4xl sm:text-3xl font-light text-[#F04231] font-Sacramento mb-2 pr-60 md:pr-0">
             Facilities
           </h1>
@@ -456,30 +456,30 @@
     <img
       src="/assets/leaf4.svg"
       alt="Leaf Design"
-      class="absolute bottom-0 left-0 h-auto w-[100px] sm:w-[150px] md:w-[580px] lg:w-[580px] z-10"
+      class="absolute top-60 left-0 h-auto w-[100px] sm:w-[150px] md:w-[580px] lg:w-[580px] z-10"
     />
 
     <!-- Counter Section -->
     <div
       id="counter-section"
-      class="w-full min-h-[50vh] bg-cover bg-center bg-no-repeat flex items-center justify-center px-4 -mt-0 sm:-mt-52 md:-mt-24 relative z-10"
+      class="w-full min-h-[50vh] bg-cover bg-center bg-no-repeat flex items-center justify-center px-4 -mt-0 sm:-mt-52 md:-mt-24  z-10"
       style="background-image: url('/assets/CounterBG.jpg')"
     >
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-40 text-white text-center py-10">
         <div>
-          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-experience">0</h2>
+          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-experience" data-target="15">0</h2>
           <p class="text-lg sm:text-xl font-light font-Raleway">Year of Experience</p>
         </div>
         <div>
-          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-buns">0</h2>
+          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-buns" data-target="20">0</h2>
           <p class="text-lg sm:text-xl font-light font-Raleway">Tons of Buns</p>
         </div>
         <div>
-          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-bread">0</h2>
+          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-bread "  data-target="30">0</h2>
           <p class="text-lg sm:text-xl font-light font-Raleway">Tons of Bread</p>
         </div>
         <div>
-          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-customers">0</h2>
+          <h2 class="text-3xl sm:text-6xl font-bold font-Signika mb-5" id="counter-customers"  data-target="40">0</h2>
           <p class="text-lg sm:text-xl font-light font-Raleway">Happy Customers</p>
         </div>
       </div>
